@@ -5,7 +5,7 @@ lecture on NP-hard problems -- given a set of cities, determine the length of
 the shortest tour that visits all of them. We can get from any city to any other
 city, i.e. the graph of cities is completely connected. We consider the version
 of the Traveling Salesperson Problem that finds the shortest tour to visit $n$
-cities, starting at a city and ending at the $n$ th city; it *does not* go
+cities, starting at a city and ending at the $n$ th city; it _does not_ go
 back to the start. The start city may be any of the cities. Remember that the
 graph for a TSP is undirected, i.e. the cost is the same in either direction.
 
@@ -46,3 +46,8 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+Had chat gpt help with debugging an error about misshandaling the problems constraints.
+
+The worst case time complexity is O(n^2 _ 2^n). This is becasue the algorithm exlores all subsets of n cities, which is 2^n, and performs up to n transitions for each subset. The use of memoization ensures that previously computed subproblems are not recomputed, but each subset of cities still needs to be processed. The memory complexity in the worst case is O(n _ 2^n) due to the memoization cache that stores results for all subsets of visited cities and corresponding current city indices. The maximum recursive stack depth contributes O(n) to the memory usage.
+
+"I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice."
